@@ -35,6 +35,7 @@ namespace CustomUserStore.UserManagement
 
         public Task CreateAsync(TUser user)
         {
+            HttpContext ctx = HttpContext.Current;
             users.Add(user);
             saveFileUsers();
             return Task.FromResult(0);
